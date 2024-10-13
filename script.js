@@ -6,7 +6,7 @@ const sections = [{
         a: 'the Constitution',
     },{
         q: 'What does the Constitution do?',
-        a: '▪ sets up the government\n\n▪ defines the government\n\n▪ protects basic rights of Americans',
+        a: '• sets up the government\n\n• defines the government\n\n• protects basic rights of Americans',
     },{
         q: 'The idea of self-government is in the first three words of the Constitution. What are these words?',
         a: 'We the People',
@@ -18,16 +18,16 @@ const sections = [{
         a:'the Bill of Rights'
     },{
         q:'What is one right or freedom from the First Amendment?',
-        a: '▪ speech\n\n▪ religion\n\n▪ assembly\n\n▪ press\n\n▪ petition  the government'
+        a: '• speech\n\n• religion\n\n• assembly\n\n• press\n\n• petition  the government'
     },{
         q:'How many amendments does the Constitution have?',
         a:'twenty-seven (27)',
     },{
         q:'What did the Declaration of Independence do?',
-        a:'▪ announced our independence (from Great Britain)\n\n▪ declared our independence (from Great Britain)\n\n▪ said that the United States is free (from Great Britain)',
+        a:'• announced our independence (from Great Britain)\n\n• declared our independence (from Great Britain)\n\n• said that the United States is free (from Great Britain)',
     },{
         q:'What are two rights in the Declaration of Independence?',
-        a:'▪ life\n\n▪ liberty\n\n▪ pursuit of happiness'
+        a:'• life\n\n• liberty\n\n• pursuit of happiness'
     },{
         q:'What is freedom of religion?',
         a:'You can practice any religion, or not practice a religion.',
@@ -36,21 +36,21 @@ const sections = [{
         a:'capitalist economy / market economy',
     },{
         q:'What is the “rule of law”?',
-        a:'▪ Everyone must follow the law.\n\n▪ Leaders must obey the law.\n\n▪ Government must obey the law.\n\n▪ No one is above the law.'}]
+        a:'• Everyone must follow the law.\n\n• Leaders must obey the law.\n\n• Government must obey the law.\n\n• No one is above the law.'}]
 },{
     section: 'System of Government',
     questionsAndAnswers: [{
         q:'Name one branch or part of the government.*',
-        a: '▪ Congress\n\n▪ legislative\n\n▪ President\n\n▪ executive\n\n▪ the courts\n\n▪ judicial',
+        a: '• Congress\n\n• legislative\n\n• President\n\n• executive\n\n• the courts\n\n• judicial',
     }, {
         q: 'What stops one branch of government from becoming too powerful?',
-        a: '▪ checks and balances\n\n▪ separation of powers',
+        a: '• checks and balances\n\n• separation of powers',
     }, {
         q: 'Who is in charge of the executive branch?',
         a: 'the President',
     }, {
         q: 'Who makes federal laws?',
-        a: '▪ Congress\n\n▪ Senate and House (of Representatives)\n\n▪ (U.S. or national) legislature',
+        a: '• Congress\n\n• Senate and House (of Representatives)\n\n• (U.S. or national) legislature',
     }, {
         q: 'What are the two parts of the U.S. Congress?*',
         a: 'the Senate and House (of Representatives)',
@@ -128,26 +128,26 @@ a:'advises the President'
 
 
 q:'What are two Cabinet-level positions?',
-// ▪ Secretary of Agriculture
-// ▪ Secretary of Commerce
-// ▪ Secretary of Defense
-// ▪ Secretary of Education
-// ▪ Secretary of Energy
-// ▪ Secretary of Health and Human Services
-// ▪ Secretary of Homeland Security
-// ▪ Secretary of Housing and Urban Development
-// ▪ Secretary of the Interior
-// ▪ Secretary of Labor
-// ▪ Secretary of State
-// ▪ Secretary of Transportation
-// ▪ Secretary of the Treasury
-// ▪ Secretary of Veterans Affairs
-a:'▪ Attorney General\n\n▪ Vice President',
+// • Secretary of Agriculture
+// • Secretary of Commerce
+// • Secretary of Defense
+// • Secretary of Education
+// • Secretary of Energy
+// • Secretary of Health and Human Services
+// • Secretary of Homeland Security
+// • Secretary of Housing and Urban Development
+// • Secretary of the Interior
+// • Secretary of Labor
+// • Secretary of State
+// • Secretary of Transportation
+// • Secretary of the Treasury
+// • Secretary of Veterans Affairs
+a:'• Attorney General\n\n• Vice President',
 
 },{
 
 q:'What does the judicial branch do?',
-a:'▪ reviews laws\n\n▪ explains laws\n\n▪ resolves disputes (disagreements)\n\n▪ decides if a law goes against the Constitution',
+a:'• reviews laws\n\n• explains laws\n\n• resolves disputes (disagreements)\n\n• decides if a law goes against the Constitution',
 
 },{
 
@@ -167,12 +167,12 @@ a:'John Roberts '
 },{
 
 q:'Under our Constitution, some powers belong to the federal government. What is one power of the federal government?',
-a:'▪ to print money 🤑\n\n▪ to declare war 🔫'
+a:'• to print money 🤑\n\n• to declare war 🔫'
 
 },{
 
 q:'Under our Constitution, some powers belong to the states. What is one power of the states?',
-a:'▪ provide schooling and education 🎓\n\n▪ provide protection (police) 🚔'
+a:'• provide schooling and education 🎓\n\n• provide protection (police) 🚔'
 
 },{
 
@@ -225,3 +225,16 @@ window.scrollTo(0, 0);
 
 document.getElementById('q').textContent = questionsAndAnswer.q;
 document.getElementById('a').textContent = questionsAndAnswer.a;
+
+function isDayTimeHours() {
+    const now = new Date();
+    const currentHour = now.getHours();
+    
+    // Check if the current time is between 8 AM (8) and 6 PM (18)
+    return currentHour >= 8 && currentHour < 18;
+  }
+
+if (!isDayTimeHours()) {
+    document.body.classList.add('bg-gray-800');
+    document.body.classList.add('text-orange-200');
+}
