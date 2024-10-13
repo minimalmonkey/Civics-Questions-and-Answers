@@ -234,7 +234,7 @@ function isDayTimeHours() {
     return currentHour >= 8 && currentHour < 18;
   }
 
-if (!isDayTimeHours()) {
-    document.body.classList.add('bg-gray-800');
-    document.body.classList.add('text-orange-200');
+if (isDayTimeHours()) {
+    document.body.classList.add('bg-white');
+    document.body.classList.add('text-slate-700');
 }
