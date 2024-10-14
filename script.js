@@ -351,14 +351,7 @@ const jsonData = {
           "answer": [
             "vote",
             "join a political party",
-            "help with a campaign",
-            "join a civic group",
-            "join a community group",
-            "give an elected official your opinion on an issue",
-            "call Senators and Representatives",
-            "publicly support or oppose an issue or policy",
             "run for office",
-            "write to a newspaper"
           ]
         },
         {
@@ -448,9 +441,6 @@ const jsonData = {
           "question": "What is one thing Benjamin Franklin is famous for?",
           "answer": [
             "U.S. diplomat",
-            "oldest member of the Constitutional Convention",
-            "first Postmaster General of the United States",
-            "writer of 'Poor Richard's Almanac'",
             "started the first free libraries"
           ]
         },
@@ -779,5 +769,5 @@ function isDayTimeHours() {
 
 if (isDayTimeHours()) {
     document.body.classList.add('bg-white');
-    document.body.classList.add('text-slate-700');
+    document.body.classList.add('text-slate-700');   
 }
