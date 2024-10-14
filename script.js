@@ -776,11 +776,18 @@ window.addEventListener('beforeunload', function() {
 const correctBtn = document.getElementById('correct');
 correctBtn.addEventListener('click', function() {
     saveToLocalStorage('skip-questions', [...skipQuestions, index]);
+
+
+    correct.textContent = '🎉';
 });
 
 const resetBtn = document.getElementById('reset');
 resetBtn.addEventListener('click', function() {
     saveToLocalStorage('skip-questions', []);
+    saveToLocalStorage('index', 0);
+    setTimeout(() => {
+        window.location.reload();
+    }, 1);
 });
 
 
