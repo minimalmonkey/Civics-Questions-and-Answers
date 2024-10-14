@@ -798,5 +798,7 @@ function isDayTimeHours() {
 
 if (isDayTimeHours()) {
     document.body.classList.add('bg-white');
-    document.body.classList.add('text-slate-700');   
+    document.body.classList.add('text-slate-700');  
+    document.getElementById('footer').classList.add('bg-gray-100');
+    document.getElementById('reset').classList.add('bg-gray-300');
 }
