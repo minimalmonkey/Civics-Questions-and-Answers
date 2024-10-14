@@ -729,23 +729,38 @@ function saveToLocalStorage(key, value) {
 //   const jsonData = {
 //     // your JSON data here
 //   };
+
+
+const skipQuestions = getFromLocalStorage('skip-questions') || [];
+
+console.log('skipQuestions:', skipQuestions);
+
+
   
 const questionObjects = extractQuestionObjects(jsonData);
+
+const filteredQuestions = questionObjects.filter(function(_, index) {
+    return skipQuestions.indexOf(index) === -1;
+});
+
+console.log('how many questions?', filteredQuestions.length);
+
 // console.log(questionObjects);
+
 
 
 // const index = Math.floor(Math.random() * questionObjects.length);
 
 let index = getFromLocalStorage('index') || 0;
 
-if (index >= questionObjects.length) index = 0;
+if (index >= filteredQuestions.length) index = 0;
 
 console.log('index:', index);
 
-saveToLocalStorage('index', index + 1)
+saveToLocalStorage('index', index + 1);
 
 
-const chosenOne = questionObjects[index];
+const chosenOne = filteredQuestions[index];
 
 console.log('chosenOne:',chosenOne);
 
@@ -757,6 +772,20 @@ document.getElementById('answer').textContent = chosenOne.answer.join('\n\n');
 window.addEventListener('beforeunload', function() {
     window.scrollTo(0, 0);
 });
+
+const correctBtn = document.getElementById('correct');
+correctBtn.addEventListener('click', function() {
+    saveToLocalStorage('skip-questions', [...skipQuestions, index]);
+});
+
+const resetBtn = document.getElementById('reset');
+resetBtn.addEventListener('click', function() {
+    saveToLocalStorage('skip-questions', []);
+});
+
+
+
+document.getElementById('info').textContent = `Showing ${filteredQuestions.length} of ${questionObjects.length} questions`;
 
 
 function isDayTimeHours() {

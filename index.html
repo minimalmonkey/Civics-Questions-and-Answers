@@ -12,17 +12,22 @@
   <!-- <h1 class="text-3xl font-bold underline">
     Civics Questions and Answers
   </h1> -->
-  <div id="question-wrapper" class="h-full grow whitespace-pre-wrap shrink-0 text-pretty text-center leading-relaxed flex flex-col items-center justify-center">
+  <div class="h-full grow whitespace-pre-wrap shrink-0 text-pretty text-center leading-relaxed flex flex-col items-center justify-center">
     <div class="p-3 uppercase tracking-wider">Question</div>
     <div class="flex items-center justify-center grow text-3xl">
         <div id="question" class="pb-12 px-12"></div>
     </div>
   </div>
-  <div id="answer-wrapper" class="h-full grow whitespace-pre-wrap shrink-0 text-pretty text-center leading-relaxed flex flex-col items-center justify-center">
+  <div class="h-full grow whitespace-pre-wrap shrink-0 text-pretty text-center leading-relaxed flex flex-col items-center justify-center">
     <div class="p-3 uppercase tracking-wider">Answer</div>
     <div class="flex items-center justify-center grow text-3xl">
         <div id="answer" class="pb-12 px-12"></div>
     </div>
+    <button id="correct" class="text-5xl mb-6">👍</button>
+  </div>
+  <div class="p-12 bg-gray-100 flex flex-col gap-3 items-center">
+    <span id="info"></span>
+    <button id="reset" class="px-3 py-1.5 bg-gray-300 grow-0 uppercase tracking-wider">Reset</button>
   </div>
 </body>
 <script src="script.js"></script>
