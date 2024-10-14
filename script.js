@@ -784,8 +784,9 @@ resetBtn.addEventListener('click', function() {
 });
 
 
-
-document.getElementById('info').textContent = `Showing ${filteredQuestions.length} of ${questionObjects.length} questions`;
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('info').textContent = `Showing ${filteredQuestions.length} of ${questionObjects.length} questions`;
+}, false);
 
 
 function isDayTimeHours() {
