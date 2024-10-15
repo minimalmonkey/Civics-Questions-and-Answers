@@ -672,7 +672,7 @@ const jsonData = {
 
 //   console.log('jsonData:', jsonData);
 
-
+(function() {
 
 function saveToLocalStorage(key, value) {
     try {
@@ -708,7 +708,7 @@ function saveToLocalStorage(key, value) {
         // Loop through array of questions
         obj.forEach(item => {
           if (item.question && item.answer) {
-            questionsArray.push({ question: item.question, answer: item.answer });
+            questionsArray.push({ question: item.question, answer: item.answer, number: item.number });
           }
         });
       } else if (typeof obj === 'object') {
@@ -724,23 +724,24 @@ function saveToLocalStorage(key, value) {
   
     return questionsArray;
   }
-  
-  // Example usage with the provided JSON data
-//   const jsonData = {
-//     // your JSON data here
-//   };
 
 
 const skipQuestions = getFromLocalStorage('skip-questions') || [];
 
 console.log('skipQuestions:', skipQuestions);
-
-
   
 const questionObjects = extractQuestionObjects(jsonData);
 
-const filteredQuestions = questionObjects.filter(function(_, index) {
-    return skipQuestions.indexOf(index) === -1;
+
+if (skipQuestions.length === questionObjects.length) {
+    // saveToLocalStorage('skip-questions', []);
+    document.getElementById('question-wrapper').classList.add('hidden');
+    document.getElementById('answer-wrapper').classList.add('hidden');
+    document.getElementById('you-are-prepared').classList.remove('hidden');
+}
+
+const filteredQuestions = questionObjects.filter(function({ number }) {
+    return skipQuestions.indexOf(number) === -1;
 });
 
 console.log('how many questions?', filteredQuestions.length);
@@ -748,12 +749,9 @@ console.log('how many questions?', filteredQuestions.length);
 // console.log(questionObjects);
 
 
-
-// const index = Math.floor(Math.random() * questionObjects.length);
-
-let index = getFromLocalStorage('index') || 0;
-
-if (index >= filteredQuestions.length) index = 0;
+const index = Math.floor(Math.random() * filteredQuestions.length);
+// let index = getFromLocalStorage('index') || 0;
+// if (index >= filteredQuestions.length) index = 0;
 
 console.log('index:', index);
 
@@ -764,9 +762,11 @@ const chosenOne = filteredQuestions[index];
 
 console.log('chosenOne:',chosenOne);
 
-
-document.getElementById('question').textContent = chosenOne.question;
-document.getElementById('answer').textContent = chosenOne.answer.join('\n\n');
+if (chosenOne) {
+    // document.getElementById('question-title').textContent = `Question ${chosenOne.number}`;
+    document.getElementById('question').textContent = chosenOne.question;
+    document.getElementById('answer').textContent = chosenOne.answer.join('\n\n');
+}
 
 
 window.addEventListener('beforeunload', function() {
@@ -775,10 +775,12 @@ window.addEventListener('beforeunload', function() {
 
 const correctBtn = document.getElementById('correct');
 correctBtn.addEventListener('click', function() {
-    saveToLocalStorage('skip-questions', [...skipQuestions, index]);
-
-
+    saveToLocalStorage('skip-questions', [...skipQuestions, chosenOne.number]);
     correct.textContent = '🎉';
+
+    setTimeout(() => {
+        window.location.reload();
+    }, 300);
 });
 
 const resetBtn = document.getElementById('reset');
@@ -792,7 +794,9 @@ resetBtn.addEventListener('click', function() {
 
 
 document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById('info').textContent = `Showing ${filteredQuestions.length} of ${questionObjects.length} questions`;
+    // document.getElementById('info').textContent = `Showing ${filteredQuestions.length} of ${questionObjects.length} questions`;
+    const percentCorrect = Math.round(skipQuestions.length / questionObjects.length * 100);
+    document.getElementById('info').textContent = `${percentCorrect}%`;
 }, false);
 
 
@@ -810,3 +814,5 @@ if (isDayTimeHours()) {
     document.getElementById('footer').classList.add('bg-gray-100');
     document.getElementById('reset').classList.add('bg-gray-300');
 }
+
+})();
