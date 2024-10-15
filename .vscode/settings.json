@@ -1,0 +1,17 @@
+{
+	"editor.formatOnSave": true,
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"[json]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode" // vscode by default don't apply defaultFormatter value to json
+	},
+	"tailwindCSS.classAttributes": [
+		"class",
+		"className",
+		".*Style*" // Add ".*Styles*" (or whatever matches your naming scheme)
+	],
+	"tailwindCSS.experimental.classRegex": [["classNames\\(([^)]*)\\)", "'([^']*)'"]],
+	"eslint.validate": ["typescript", "typescriptreact"],
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": "explicit"
+	}
+}
