@@ -9,7 +9,11 @@ const jsonData = {
 			{
 				number: 2,
 				question: 'What does the Constitution do?',
-				answer: ['sets up the government', 'defines the government', 'protects basic rights of Americans'],
+				answer: [
+					'sets up the government',
+					'defines the government',
+					'protects basic rights of Americans',
+				],
 			},
 			{
 				number: 3,
@@ -19,7 +23,10 @@ const jsonData = {
 			{
 				number: 4,
 				question: 'What is an amendment?',
-				answer: ['a change (to the Constitution)', 'an addition (to the Constitution)'],
+				answer: [
+					'a change (to the Constitution)',
+					'an addition (to the Constitution)',
+				],
 			},
 			{
 				number: 5,
@@ -29,7 +36,13 @@ const jsonData = {
 			{
 				number: 6,
 				question: 'What is one right or freedom from the First Amendment?',
-				answer: ['speech', 'religion', 'assembly', 'press', 'petition the government'],
+				answer: [
+					'speech',
+					'religion',
+					'assembly',
+					'press',
+					'petition the government',
+				],
 			},
 			{
 				number: 7,
@@ -48,7 +61,11 @@ const jsonData = {
 			{
 				number: 9,
 				question: 'What are two rights in the Declaration of Independence?',
-				answer: ['life', 'liberty', 'pursuit of happiness'],
+				answer: [
+					'life',
+					'liberty',
+					'pursuit of happiness',
+				],
 			},
 			{
 				number: 10,
@@ -58,7 +75,10 @@ const jsonData = {
 			{
 				number: 11,
 				question: 'What is the economic system in the United States?',
-				answer: ['capitalist economy', 'market economy'],
+				answer: [
+					'capitalist economy',
+					'market economy',
+				],
 			},
 			{
 				number: 12,
@@ -75,12 +95,22 @@ const jsonData = {
 			{
 				number: 13,
 				question: 'Name one branch or part of the government.',
-				answer: ['Congress', 'legislative', 'President', 'executive', 'the courts', 'judicial'],
+				answer: [
+					'Congress',
+					'legislative',
+					'President',
+					'executive',
+					'the courts',
+					'judicial',
+				],
 			},
 			{
 				number: 14,
 				question: 'What stops one branch of government from becoming too powerful?',
-				answer: ['checks and balances', 'separation of powers'],
+				answer: [
+					'checks and balances',
+					'separation of powers',
+				],
 			},
 			{
 				number: 15,
@@ -90,7 +120,11 @@ const jsonData = {
 			{
 				number: 16,
 				question: 'Who makes federal laws?',
-				answer: ['Congress', 'Senate and House (of Representatives)', '(U.S. or national) legislature'],
+				answer: [
+					'Congress',
+					'Senate and House (of Representatives)',
+					'(U.S. or national) legislature',
+				],
 			},
 			{
 				number: 17,
@@ -125,7 +159,10 @@ const jsonData = {
 			{
 				number: 23,
 				question: 'Name your U.S. Representative.',
-				answer: ['Nancy Pelosi'],
+				answer: [
+					'Nancy Pelosi (California\'s 11th Congressional District, including San Francisco)',
+					'Laura Friedman (California\'s 30th Congressional District, including West Hollywood)',
+				],
 			},
 			{
 				number: 24,
@@ -135,7 +172,11 @@ const jsonData = {
 			{
 				number: 25,
 				question: 'Why do some states have more Representatives than other states?',
-				answer: ["because of the state's population", 'because they have more people'],
+				answer: [
+					'(because of) the state\'s population',
+					'(because) they have more people',
+					'(because) some states have more people',
+				],
 			},
 			{
 				number: 26,
@@ -150,12 +191,19 @@ const jsonData = {
 			{
 				number: 28,
 				question: 'What is the name of the President of the United States now?',
-				answer: ['Joe Biden'],
+				answer: [
+					'Donald J. Trump',
+					'Donald Trump',
+					'Trump',
+				],
 			},
 			{
 				number: 29,
 				question: 'What is the name of the Vice President of the United States now?',
-				answer: ['Kamala Harris'],
+				answer: [
+					'JD Vance',
+					'Vance',
+				],
 			},
 			{
 				number: 30,
@@ -232,13 +280,21 @@ const jsonData = {
 			{
 				number: 40,
 				question: 'Who is the Chief Justice of the United States now?',
-				answer: ['John Roberts'],
+				answer: [
+					'John Roberts',
+					'John G. Roberts, Jr.',
+				],
 			},
 			{
 				number: 41,
 				question:
 					'Under our Constitution, some powers belong to the federal government. What is one power of the federal government?',
-				answer: ['to print money', 'to declare war', 'to create an army', 'to make treaties'],
+				answer: [
+					'to print money',
+					'to declare war',
+					'to create an army',
+					'to make treaties',
+				],
 			},
 			{
 				number: 42,
@@ -247,7 +303,7 @@ const jsonData = {
 					'provide schooling and education',
 					'provide protection (police)',
 					'provide safety (fire departments)',
-					'give a driver’s license',
+					'give a driver\'s license',
 					'approve zoning and land use',
 				],
 			},
@@ -264,17 +320,24 @@ const jsonData = {
 			{
 				number: 45,
 				question: 'What are the two major political parties in the United States?',
-				answer: ['Democratic', 'Republican'],
+				answer: [
+					'Democratic',
+					'Republican',
+				],
 			},
 			{
 				number: 46,
 				question: 'What is the political party of the President now?',
-				answer: ['Democratic (Party)'],
+				answer: ['Republican (Party)'],
 			},
 			{
 				number: 47,
 				question: 'What is the name of the Speaker of the House of Representatives now?',
-				answer: ['Mike Johnson'],
+				answer: [
+					'Mike Johnson',
+					'Johnson',
+					'James Michael Johnson (birth name)',
+				],
 			},
 		],
 		'C: Rights and Responsibilities': [
@@ -291,12 +354,18 @@ const jsonData = {
 			{
 				number: 49,
 				question: 'What is one responsibility that is only for United States citizens?',
-				answer: ['serve on a jury', 'vote in a federal election'],
+				answer: [
+					'serve on a jury',
+					'vote in a federal election',
+				],
 			},
 			{
 				number: 50,
 				question: 'Name one right only for United States citizens.',
-				answer: ['vote in a federal election', 'run for federal office'],
+				answer: [
+					'vote in a federal election',
+					'run for federal office',
+				],
 			},
 			{
 				number: 51,
@@ -313,7 +382,10 @@ const jsonData = {
 			{
 				number: 52,
 				question: 'What do we show loyalty to when we say the Pledge of Allegiance?',
-				answer: ['the United States', 'the flag'],
+				answer: [
+					'the United States',
+					'the flag',
+				],
 			},
 			{
 				number: 53,
@@ -356,7 +428,10 @@ const jsonData = {
 			{
 				number: 57,
 				question: 'When must all men register for the Selective Service?',
-				answer: ['at age eighteen (18)', 'between eighteen (18) and twenty-six (26)'],
+				answer: [
+					'at age eighteen (18)',
+					'between eighteen (18) and twenty-six (26)',
+				],
 			},
 		],
 	},
@@ -377,12 +452,18 @@ const jsonData = {
 			{
 				number: 59,
 				question: 'Who lived in America before the Europeans arrived?',
-				answer: ['American Indians', 'Native Americans'],
+				answer: [
+					'American Indians',
+					'Native Americans',
+				],
 			},
 			{
 				number: 60,
 				question: 'What group of people was taken to America and sold as slaves?',
-				answer: ['Africans', 'people from Africa'],
+				answer: [
+					'Africans',
+					'people from Africa',
+				],
 			},
 			{
 				number: 61,
@@ -425,7 +506,10 @@ const jsonData = {
 			{
 				number: 65,
 				question: 'What happened at the Constitutional Convention?',
-				answer: ['The Constitution was written.', 'The Founding Fathers wrote the Constitution.'],
+				answer: [
+					'The Constitution was written.',
+					'The Founding Fathers wrote the Constitution.',
+				],
 			},
 			{
 				number: 66,
@@ -435,7 +519,12 @@ const jsonData = {
 			{
 				number: 67,
 				question: 'The Federalist Papers supported the passage of the U.S. Constitution. Name one of the writers.',
-				answer: ['(James) Madison', '(Alexander) Hamilton', '(John) Jay', 'Publius'],
+				answer: [
+					'(James) Madison',
+					'(Alexander) Hamilton',
+					'(John) Jay',
+					'Publius',
+				],
 			},
 			{
 				number: 68,
@@ -444,7 +533,7 @@ const jsonData = {
 					'U.S. diplomat',
 					'oldest member of the Constitutional Convention',
 					'first Postmaster General of the United States',
-					"writer of 'Poor Richard's Almanac'",
+					'writer of \'Poor Richard\'s Almanac',
 					'started the first free libraries',
 				],
 			},
@@ -463,22 +552,37 @@ const jsonData = {
 			{
 				number: 71,
 				question: 'What territory did the United States buy from France in 1803?',
-				answer: ['the Louisiana Territory', 'Louisiana'],
+				answer: [
+					'the Louisiana Territory',
+					'Louisiana',
+				],
 			},
 			{
 				number: 72,
 				question: 'Name one war fought by the United States in the 1800s.',
-				answer: ['War of 1812', 'Mexican-American War', 'Civil War', 'Spanish-American War'],
+				answer: [
+					'War of 1812',
+					'Mexican-American War',
+					'Civil War',
+					'Spanish-American War',
+				],
 			},
 			{
 				number: 73,
 				question: 'Name the U.S. war between the North and the South.',
-				answer: ['the Civil War', 'the War between the States'],
+				answer: [
+					'the Civil War',
+					'the War between the States',
+				],
 			},
 			{
 				number: 74,
 				question: 'Name one problem that led to the Civil War.',
-				answer: ['slavery', 'economic reasons', 'states’ rights'],
+				answer: [
+					'slavery',
+					'economic reasons',
+					'states\' rights',
+				],
 			},
 			{
 				number: 75,
@@ -502,14 +606,23 @@ const jsonData = {
 			{
 				number: 77,
 				question: 'What did Susan B. Anthony do?',
-				answer: ['fought for women’s rights', 'fought for civil rights'],
+				answer: [
+					'fought for women\'s rights',
+					'fought for civil rights',
+				],
 			},
 		],
 		'C: Recent American History and Other Important Historical Information': [
 			{
 				number: 78,
 				question: 'Name one war fought by the United States in the 1900s.',
-				answer: ['World War I', 'World War II', 'Korean War', 'Vietnam War', '(Persian) Gulf War'],
+				answer: [
+					'World War I',
+					'World War II',
+					'Korean War',
+					'Vietnam War',
+					'(Persian) Gulf War',
+				],
 			},
 			{
 				number: 79,
@@ -524,7 +637,11 @@ const jsonData = {
 			{
 				number: 81,
 				question: 'Who did the United States fight in World War II?',
-				answer: ['Japan', 'Germany', 'Italy'],
+				answer: [
+					'Japan',
+					'Germany',
+					'Italy',
+				],
 			},
 			{
 				number: 82,
@@ -544,7 +661,10 @@ const jsonData = {
 			{
 				number: 85,
 				question: 'What did Martin Luther King, Jr. do?',
-				answer: ['fought for civil rights', 'worked for equality for all Americans'],
+				answer: [
+					'fought for civil rights',
+					'worked for equality for all Americans',
+				],
 			},
 			{
 				number: 86,
@@ -586,7 +706,10 @@ const jsonData = {
 			{
 				number: 88,
 				question: 'Name one of the two longest rivers in the United States.',
-				answer: ['Missouri (River)', 'Mississippi (River)'],
+				answer: [
+					'Missouri (River)',
+					'Mississippi (River)',
+				],
 			},
 			{
 				number: 89,
@@ -601,7 +724,13 @@ const jsonData = {
 			{
 				number: 91,
 				question: 'Name one U.S. territory.',
-				answer: ['Puerto Rico', 'U.S. Virgin Islands', 'American Samoa', 'Northern Mariana Islands', 'Guam'],
+				answer: [
+					'Puerto Rico',
+					'U.S. Virgin Islands',
+					'American Samoa',
+					'Northern Mariana Islands',
+					'Guam',
+				],
 			},
 			{
 				number: 92,
@@ -625,7 +754,12 @@ const jsonData = {
 			{
 				number: 93,
 				question: 'Name one state that borders Mexico.',
-				answer: ['California', 'Arizona', 'New Mexico', 'Texas'],
+				answer: [
+					'California',
+					'Arizona',
+					'New Mexico',
+					'Texas',
+				],
 			},
 			{
 				number: 94,
@@ -635,14 +769,23 @@ const jsonData = {
 			{
 				number: 95,
 				question: 'Where is the Statue of Liberty?',
-				answer: ['New York (Harbor)', 'Liberty Island'],
+				answer: [
+					'New York (Harbor)',
+					'Liberty Island',
+					'New Jersey',
+					'near New York City',
+					'on the Hudson (River)',
+				],
 			},
 		],
 		'B: Symbols': [
 			{
 				number: 96,
 				question: 'Why does the flag have 13 stripes?',
-				answer: ['because there were 13 original colonies', 'because the stripes represent the original colonies'],
+				answer: [
+					'because there were 13 original colonies',
+					'because the stripes represent the original colonies',
+				],
 			},
 			{
 				number: 97,
@@ -669,9 +812,9 @@ const jsonData = {
 				number: 100,
 				question: 'Name two national U.S. holidays.',
 				answer: [
-					'New Year’s Day',
+					'New Year\'s Day',
 					'Martin Luther King, Jr. Day',
-					'Presidents’ Day',
+					'Presidents\' Day',
 					'Memorial Day',
 					'Juneteenth',
 					'Independence Day',

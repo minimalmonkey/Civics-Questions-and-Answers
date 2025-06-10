@@ -1,4 +1,5 @@
 const LOCAL_STORAGE_SKIP_QUESTIONS = 'skip-questions';
+const LOCAL_STORAGE_CORRECT_COUNT = 'correct-count';
 
 (function () {
 	/**
@@ -15,6 +16,7 @@ const LOCAL_STORAGE_SKIP_QUESTIONS = 'skip-questions';
 	 * Get the questions filtered by the ones you know
 	 */
 	const skipQuestions = getFromLocalStorage(LOCAL_STORAGE_SKIP_QUESTIONS) || [];
+	const correctCount = getFromLocalStorage(LOCAL_STORAGE_CORRECT_COUNT) || 0;
 	const chosenOne = getQuestion(skipQuestions);
 
 	if (chosenOne?.number) {
@@ -27,12 +29,27 @@ const LOCAL_STORAGE_SKIP_QUESTIONS = 'skip-questions';
 	}
 
 	/**
-	 * Handler for when correct 👍 button pressed so we can throw the Q in skip questions array & refresh
+	 * Handler for when correct ✅ button pressed so we can throw the Q in skip questions array & refresh
 	 */
 	const correctBtn = document.getElementById('correct');
 	correctBtn.addEventListener('click', function () {
 		saveToLocalStorage(LOCAL_STORAGE_SKIP_QUESTIONS, [...skipQuestions, chosenOne.number]);
+		saveToLocalStorage(LOCAL_STORAGE_CORRECT_COUNT, correctCount + 1);
 		correct.textContent = '🎉';
+
+		setTimeout(() => {
+			window.scrollTo(0, 0);
+			window.location.reload();
+		}, 300);
+	});
+
+	/**
+	 * Handler for when incorrect ❌ button pressed so we can throw the Q in skip questions array & refresh
+	 */
+	const incorrectBtn = document.getElementById('incorrect');
+	incorrectBtn.addEventListener('click', function () {
+		saveToLocalStorage(LOCAL_STORAGE_SKIP_QUESTIONS, [...skipQuestions, chosenOne.number]);
+		incorrect.textContent = '😩';
 
 		setTimeout(() => {
 			window.scrollTo(0, 0);
@@ -46,6 +63,7 @@ const LOCAL_STORAGE_SKIP_QUESTIONS = 'skip-questions';
 	const resetBtn = document.getElementById('reset');
 	resetBtn.addEventListener('click', function () {
 		saveToLocalStorage(LOCAL_STORAGE_SKIP_QUESTIONS, []);
+		saveToLocalStorage(LOCAL_STORAGE_CORRECT_COUNT, 0);
 		setTimeout(() => {
 			window.location.reload();
 		}, 1);
@@ -57,7 +75,7 @@ const LOCAL_STORAGE_SKIP_QUESTIONS = 'skip-questions';
 	document.addEventListener(
 		'DOMContentLoaded',
 		function () {
-			const percentCorrect = Math.round((skipQuestions.length / chosenOne.total) * 100);
+			const percentCorrect = Math.round((correctCount / chosenOne.total) * 100);
 			document.getElementById('info').textContent = `You know ${percentCorrect}% of ${chosenOne.total} Qs`;
 		},
 		false,
